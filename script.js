@@ -4,6 +4,23 @@
 */
 
 //Prob need to display all student's grades first though in the DOM using a table
+
+//1) Display student data to the DOM
+//  1A) Connect the name field to a tr, td and display
+//  1B) Connect each student's entire grades to a tr, td and display
+//2) Calculate the average grade for each student
+//  2A) Create the logic for determining the avg grade
+//  2B) Display the solution to the DOM
+//3) Find each student who is passing (>= 60)
+//  3A) Determine the label for who isn't passing
+//  3B) Write the logic to determine who's avg grade is less than 60
+//  3C) Implement the label for those who aren't passing
+//4) Sort students by avg grade from highest to lowest
+//  4A) Write the logic to sort the students by avg grade
+//  4B) Display the sorted list to the DOM
+
+const table = document.getElementById("table");
+
 const students = [
 	{ id: 1, name: "Alice Johnson", grades: [88, 92, 79, 93] },
 	{ id: 2, name: "Ben Carter", grades: [95, 90, 97, 94] },
@@ -16,3 +33,10 @@ const students = [
 	{ id: 9, name: "Ivy Nguyen", grades: [78, 82, 88, 85] },
 	{ id: 10, name: "Jack Wilson", grades: [93, 89, 84, 91] },
 ];
+
+//Connect the data to the DOM
+students.forEach((student) => {
+	table.innerHTML += `<tr>
+        <td>${students.name}</td>
+    </tr>`;
+});
