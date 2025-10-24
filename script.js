@@ -36,7 +36,16 @@ const students = [
 
 //Connect the data to the DOM
 students.forEach((student) => {
+	//Calc the avg grade for each student
+	const avgGrade = student.grades.reduce((acc, currentVal) => acc + currentVal + 0) / student.grades.length;
+
+	//Identify each student who is passing (>= 60)
+	const isPassing = avgGrade >= 60 ? "Yes!" : "No &#128542;";
+
 	table.innerHTML += `<tr>
-        <td>${students.name}</td>
+        <td>${student.name}</td>
+		<td>${student.grades.join(", ")}</td>
+		<td>${avgGrade}</td>
+		<td>${isPassing}</td>
     </tr>`;
 });
